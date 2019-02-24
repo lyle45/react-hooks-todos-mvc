@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
-import {Grid, TextField, Paper, } from "@material-ui/core";
+import React, {useEffect} from 'react'
+import {Grid, Paper, } from "@material-ui/core";
 import {WithStyles, withStyles, createStyles, Theme} from "@material-ui/core";
 import useTodos from '../../Hooks/todoHook'
 
 import TodoForm from '../TodoForm/TodoForm'
 import TodosList from '../TodosList/TodosList'
-import Todo from "../../models/Todo";
 
 
 const styles = (theme: Theme) => (
@@ -23,11 +22,8 @@ const styles = (theme: Theme) => (
     })
 );
 
-interface Props extends WithStyles<typeof styles> {
 
-}
-
-const Main = (props: Props): JSX.Element => {
+const Main = (props: WithStyles<typeof styles>): JSX.Element => {
 
     const {classes} = props;
 

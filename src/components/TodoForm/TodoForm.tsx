@@ -5,7 +5,7 @@ interface Props {
     addTodo: Function
 }
 
-const TodoForm = (props: Props) => {
+const TodoForm = (props: Props): JSX.Element => {
     const {addTodo} = props;
 
     const [newTodo, setNewTodo] = useState('');

@@ -4,6 +4,7 @@ import {Button, FormControlLabel, Grid, List, ListItem, Radio, Typography} from 
 import Todo from '../../models/Todo'
 
 import TodoItem from '../TodoItem/TodoItem'
+import ListControls from '../ListControls/ListControls'
 
 
 interface Props {
@@ -29,18 +30,7 @@ const TodosList = (props: Props): JSX.Element => {
     const list = (
         <>
             {listItems}
-            <ListItem>
-                <Typography color='textSecondary' >
-                    Items:{todos.length}
-                </Typography>
-                <Grid container justify='center' alignContent='center' alignItems='flex-start'>
-                    <Grid item>
-                        <FormControlLabel onClick={() => {setFilter('all')}} control={<Radio checked={filter === 'all'}/>} label="All"/>
-                        <FormControlLabel onClick={() => {setFilter('active')}} control={<Radio checked={filter === 'active'}/>} label='Active'/>
-                        <FormControlLabel onClick={() => {setFilter('completed')}} control={<Radio checked={filter === 'completed'}/>} label='Completed'/>
-                    </Grid>
-                </Grid>
-            </ListItem>
+            <ListControls filter={filter} setFilter={setFilter} count={listItems.length}/>
         </>
     );
 
